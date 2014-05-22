@@ -65,7 +65,7 @@
   ],
   "post-processors": [
     {
-      "output": "../builds/{{.Provider}}/opscode_centos-6.5_chef-{{user `chef_version`}}.box",
+      "output": "../builds/{{.Provider}}/centos-6.5-amd64-vbox{{user `vbox_version`}}.box",
       "type": "vagrant"
     }
   ],
@@ -80,7 +80,10 @@
         "scripts/common/sshd.sh",
         "scripts/common/vagrant.sh",
         "scripts/common/vmtools.sh",
+        "scripts/centos/update.sh",
         "scripts/common/chef.sh",
+        "scripts/common/ruby.sh",
+        "scripts/common/puppet.sh",
         "scripts/centos/cleanup.sh",
         "scripts/common/minimize.sh"
       ],
@@ -89,7 +92,8 @@
   ],
   "variables": {
     "chef_version": "provisionerless",
-    "mirror": "http://mirrors.kernel.org/centos"
+    "mirror": "http://mirrors.kernel.org/centos",
+    "vbox_version": "4.3.10"
   }
 }
 

@@ -13,3 +13,6 @@ start on networking
 task
 exec /usr/bin/apt-get update
 EOF
+
+# install libyaml for building ruby
+apt-get -y install libyaml-dev

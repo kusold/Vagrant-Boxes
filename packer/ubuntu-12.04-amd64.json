@@ -107,7 +107,7 @@
   ],
   "post-processors": [
     {
-      "output": "../builds/{{.Provider}}/opscode_ubuntu-12.04_chef-{{user `chef_version`}}.box",
+      "output": "../builds/{{.Provider}}/ubuntu-12.04-amd64-vbox{{user `vbox_version`}}.box",
       "type": "vagrant"
     }
   ],
@@ -125,6 +125,8 @@
         "scripts/common/vagrant.sh",
         "scripts/common/vmtools.sh",
         "scripts/common/chef.sh",
+        "scripts/common/ruby.sh",
+        "scripts/common/puppet.sh",
         "scripts/ubuntu/cleanup.sh",
         "scripts/common/minimize.sh"
       ],
@@ -133,7 +135,8 @@
   ],
   "variables": {
     "chef_version": "provisionerless",
-    "mirror": "http://releases.ubuntu.com"
+    "mirror": "http://releases.ubuntu.com",
+    "vbox_version": "4.3.10"
   }
 }
 

@@ -1,7 +1,8 @@
 {
   "variables": {
     "chef_version": "provisionerless",
-    "mirror": "http://cdimage.debian.org/cdimage/archive"
+    "mirror": "http://cdimage.debian.org/cdimage/archive",
+    "vbox_version": "4.3.10"
   },
   "builders": [
     {
@@ -88,7 +89,7 @@
   "post-processors": [
     {
       "type": "vagrant",
-      "output": "../builds/{{.Provider}}/opscode_debian-6.0.9_chef-{{user `chef_version`}}.box"
+      "output": "../builds/{{.Provider}}/debian-6.0.9-amd64-vbox{{user `vbox_version`}}.box"
     }
   ],
   "provisioners": [
@@ -104,6 +105,8 @@
         "scripts/common/vagrant.sh",
         "scripts/common/vmtools.sh",
         "scripts/common/chef.sh",
+        "scripts/common/ruby.sh",
+        "scripts/common/puppet.sh",
         "scripts/debian/cleanup.sh",
         "scripts/common/minimize.sh"
       ]
