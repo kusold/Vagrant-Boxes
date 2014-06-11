@@ -5,13 +5,11 @@
 # * keeps the current kernel
 # * does not touch the virtual packages, e.g.'linux-image-generic', etc.
 #
-dpkg --list | awk '{ print $2 }' | grep 'linux-image-3.*-generic' | grep -v `uname -r` | xargs apt-get -y purge
 
-# delete all linux headers
-dpkg --list | awk '{ print $2 }' | grep linux-headers | xargs apt-get -y purge
-
-# delete linux source
-dpkg --list | awk '{ print $2 }' | grep linux-source | xargs apt-get -y purge
+# http://markmcb.com/2013/02/04/cleanup-unused-linux-kernels-in-ubuntu/
+dpkg -l 'linux-*' | sed '/^ii/!d;/'"$(uname -r | sed "s/\(.*\)-\([^0-9]\+\)/\1/")"'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d' | xargs apt-get -y purge
+apt-get -y purge linux-image-generic linux-headers-generic
+dpkg -l 'linux-*' | awk '{ print $2 }' | grep linux-headers | xargs apt-get -y purge
 
 # delete development packages
 dpkg --list | awk '{ print $2 }' | grep -- '-dev$' | xargs apt-get -y purge
@@ -27,6 +25,9 @@ apt-get -y purge ppp pppconfig pppoeconf
 
 # delete oddities
 apt-get -y purge popularity-contest
+
+# delete ruby build requirements
+apt-get -y purge libyaml-dev
 
 apt-get -y autoremove
 apt-get -y clean

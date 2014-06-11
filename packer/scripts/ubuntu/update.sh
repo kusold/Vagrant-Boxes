@@ -1,9 +1,7 @@
 #!/bin/bash -eux
-
 apt-get update
 apt-get -y upgrade
 
-# ensure the correct kernel headers are installed
 apt-get -y install linux-headers-$(uname -r)
 
 # update package index on boot
@@ -15,4 +13,4 @@ exec /usr/bin/apt-get update
 EOF
 
 # install libyaml for building ruby
-apt-get -y install libyaml-dev
+apt-get -y install libyaml-0-2 libyaml-dev

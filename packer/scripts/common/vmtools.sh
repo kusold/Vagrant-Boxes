@@ -1,5 +1,4 @@
 #!/bin/bash
-
 case "$PACKER_BUILDER_TYPE" in 
 
 virtualbox-iso|virtualbox-ovf) 
@@ -10,7 +9,6 @@ virtualbox-iso|virtualbox-ovf)
     umount /tmp/vbox
     rmdir /tmp/vbox
     rm /home/vagrant/*.iso
-    ln -s /opt/VBoxGuestAdditions-4.3.10/lib/VBoxGuestAdditions /usr/lib/VBoxGuestAdditions
     ;;
 
 vmware-iso|vmware-ovf) 
