@@ -1,8 +1,6 @@
 # Vagrant-Builds
 
-[![Build Status](http://img.shields.io/travis/opscode/bento.svg)][travis]
-
-[travis]: https://travis-ci.org/opscode/bento
+[![Build Status](https://travis-ci.org/Kusold/Vagrant-Boxes.svg?branch=master)](https://travis-ci.org/Kusold/Vagrant-Boxes)
 
 ## About
 This project is forked from the excellent [opscode/bento](https://github.com/opscode/bento) project.
