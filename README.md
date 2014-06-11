@@ -10,7 +10,9 @@ This project is forked from the excellent [opscode/bento](https://github.com/ops
 Bento is a project that encapsulates [Packer](http://packer.io) templates for building
 [Vagrant](http://vagrantup.com) baseboxes.
 
-It includes a compiled version of Ruby (`/opt/ruby`) and Puppet. I currently am only building for Virtualbox, so the VMWare boxes are untested.
+These box were built to be as minimal as possible. It includes a compiled version of Ruby (installed to `/opt/ruby` to avoid conflicts) and Puppet.
+
+I currently am only building for Virtualbox, so the VMWare boxes are untested.
 
 ## Current Baseboxes
 
