@@ -27,4 +27,4 @@ enabled=1
 gpgcheck=0
 EOM
 
-yum install -y libyaml-devel zlib-devel
+yum install -y libyaml-devel zlib-devel openssl-devel openssl libyaml

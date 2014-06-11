@@ -1,7 +1,7 @@
 #!/bin/bash -eux
 # These were only needed for building VMware/Virtualbox extensions:
 rm -rf /etc/yum.repos.d/epel.repo
-yum -y remove gcc cpp kernel-devel kernel-headers perl
+yum -y remove gcc cpp kernel-devel kernel-headers perl libyaml-devel zlib-devel openssl-devel
 yum -y clean all
 rm -rf VBoxGuestAdditions_*.iso VBoxGuestAdditions_*.iso.?
 rm -f /tmp/chef*rpm

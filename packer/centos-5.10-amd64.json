@@ -92,7 +92,7 @@
   "variables": {
     "chef_version": "provisionerless",
     "mirror": "http://mirrors.kernel.org/centos",
-    "vbox_version": "4.3.10"
+    "vbox_version": "4.3.12"
   }
 }
 

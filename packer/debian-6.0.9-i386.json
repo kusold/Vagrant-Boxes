@@ -2,7 +2,7 @@
   "variables": {
     "chef_version": "provisionerless",
     "mirror": "http://cdimage.debian.org/cdimage/archive",
-    "vbox_version": "4.3.10"
+    "vbox_version": "4.3.12"
   },
   "builders": [
     {
@@ -99,6 +99,7 @@
       "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
       "scripts": [
         "scripts/debian/update.sh",
+        "scripts/debian/update-deb6.sh",
         "scripts/common/sshd.sh",
         "scripts/debian/networking.sh",
         "scripts/debian/sudoers.sh",
@@ -107,6 +108,7 @@
         "scripts/common/chef.sh",
         "scripts/common/ruby.sh",
         "scripts/common/puppet.sh",
+        "scripts/debian/cleanup-deb6.sh",
         "scripts/debian/cleanup.sh",
         "scripts/common/minimize.sh"
       ]

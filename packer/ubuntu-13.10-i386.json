@@ -136,7 +136,7 @@
   "variables": {
     "chef_version": "provisionerless",
     "mirror": "http://releases.ubuntu.com",
-    "vbox_version": "4.3.10"
+    "vbox_version": "4.3.12"
   }
 }
 
